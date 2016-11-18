@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Wave
 //
 //  Created by Eude Lesperance on 10/26/16.
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
             
             print("success: \(user)")
             
-            self.present(FeedViewController(), animated: true, completion: nil)
+            self.present(HomeViewController(), animated: true, completion: nil)
         })
         
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in

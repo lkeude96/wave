@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if FIRAuth.auth()?.currentUser == nil {
             window?.rootViewController = LoginViewController()
         } else {
-            window?.rootViewController = HomeViewController()
+            window?.rootViewController = UINavigationController(rootViewController: HomeViewController(collectionViewLayout: UICollectionViewFlowLayout()))
         }
         
         window?.makeKeyAndVisible()
