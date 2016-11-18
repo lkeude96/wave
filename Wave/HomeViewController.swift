@@ -1,15 +1,14 @@
 //
-//  FeedViewController.swift
+//  HomeViewController.swift
 //  Wave
 //
-//  Created by Eude Lesperance on 11/10/16.
+//  Created by Eude Lesperance on 11/17/16.
 //  Copyright © 2016 Eude Lesperance. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
-class FeedViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     let navBar: UINavigationBar = {
         let navbar = UINavigationBar()
@@ -22,7 +21,7 @@ class FeedViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -45,7 +44,7 @@ class FeedViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    
     func logout() {
         try! FIRAuth.auth()?.signOut()
         present(LoginViewController(), animated: true, completion: nil)
@@ -55,4 +54,6 @@ class FeedViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
 }

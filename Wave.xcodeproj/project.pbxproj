@@ -12,8 +12,8 @@
 		8849CBB91DC1BDA000C70B75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8849CBB71DC1BDA000C70B75 /* Main.storyboard */; };
 		8849CBBB1DC1BDA000C70B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8849CBBA1DC1BDA000C70B75 /* Assets.xcassets */; };
 		8849CBBE1DC1BDA000C70B75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8849CBBC1DC1BDA000C70B75 /* LaunchScreen.storyboard */; };
+		884C3CED1DDE8ED3001C417A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C3CEC1DDE8ED3001C417A /* HomeViewController.swift */; };
 		88D7F9AD1DD2CA3B0070C37E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88D7F9AC1DD2CA3B0070C37E /* GoogleService-Info.plist */; };
-		88D7F9B01DD51CDE0070C37E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D7F9AF1DD51CDE0070C37E /* FeedViewController.swift */; };
 		D54D042A300092D3194500B3 /* Pods_Wave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B7341A7D42F446BBC0AC21 /* Pods_Wave.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +26,9 @@
 		8849CBBA1DC1BDA000C70B75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8849CBBD1DC1BDA000C70B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8849CBBF1DC1BDA100C70B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		884C3CEC1DDE8ED3001C417A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		88D7F9AC1DD2CA3B0070C37E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88D7F9AE1DD2D2800070C37E /* Wave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wave.entitlements; sourceTree = "<group>"; };
-		88D7F9AF1DD51CDE0070C37E /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F371C8CCD72AA5460F618BFD /* Pods-Wave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wave.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wave/Pods-Wave.release.xcconfig"; sourceTree = "<group>"; };
 		FBA0FF0C63823B7112B1F3B0 /* Pods-Wave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wave.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wave/Pods-Wave.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,8 +81,8 @@
 				8849CBBA1DC1BDA000C70B75 /* Assets.xcassets */,
 				8849CBBC1DC1BDA000C70B75 /* LaunchScreen.storyboard */,
 				8849CBBF1DC1BDA100C70B75 /* Info.plist */,
+				884C3CEC1DDE8ED3001C417A /* HomeViewController.swift */,
 				88D7F9AC1DD2CA3B0070C37E /* GoogleService-Info.plist */,
-				88D7F9AF1DD51CDE0070C37E /* FeedViewController.swift */,
 			);
 			path = Wave;
 			sourceTree = "<group>";
@@ -227,8 +227,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8849CBB61DC1BDA000C70B75 /* LoginViewController.swift in Sources */,
-				88D7F9B01DD51CDE0070C37E /* FeedViewController.swift in Sources */,
 				8849CBB41DC1BDA000C70B75 /* AppDelegate.swift in Sources */,
+				884C3CED1DDE8ED3001C417A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
