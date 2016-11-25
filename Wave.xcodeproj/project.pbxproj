@@ -13,6 +13,8 @@
 		8849CBBB1DC1BDA000C70B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8849CBBA1DC1BDA000C70B75 /* Assets.xcassets */; };
 		8849CBBE1DC1BDA000C70B75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8849CBBC1DC1BDA000C70B75 /* LaunchScreen.storyboard */; };
 		884C3CED1DDE8ED3001C417A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C3CEC1DDE8ED3001C417A /* HomeViewController.swift */; };
+		88687D591DE82658002CA11A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88687D581DE82658002CA11A /* Extension.swift */; };
+		88687D5E1DE82A72002CA11A /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88687D5D1DE82A72002CA11A /* EventCell.swift */; };
 		88D7F9AD1DD2CA3B0070C37E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88D7F9AC1DD2CA3B0070C37E /* GoogleService-Info.plist */; };
 		D54D042A300092D3194500B3 /* Pods_Wave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B7341A7D42F446BBC0AC21 /* Pods_Wave.framework */; };
 /* End PBXBuildFile section */
@@ -27,6 +29,8 @@
 		8849CBBD1DC1BDA000C70B75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8849CBBF1DC1BDA100C70B75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		884C3CEC1DDE8ED3001C417A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		88687D581DE82658002CA11A /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		88687D5D1DE82A72002CA11A /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		88D7F9AC1DD2CA3B0070C37E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88D7F9AE1DD2D2800070C37E /* Wave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wave.entitlements; sourceTree = "<group>"; };
 		F371C8CCD72AA5460F618BFD /* Pods-Wave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wave.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wave/Pods-Wave.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,17 +78,43 @@
 		8849CBB21DC1BDA000C70B75 /* Wave */ = {
 			isa = PBXGroup;
 			children = (
+				88687D5C1DE82A5A002CA11A /* Views */,
 				88D7F9AE1DD2D2800070C37E /* Wave.entitlements */,
 				8849CBB31DC1BDA000C70B75 /* AppDelegate.swift */,
-				8849CBB51DC1BDA000C70B75 /* LoginViewController.swift */,
+				88687D5B1DE82A3B002CA11A /* Controllers */,
 				8849CBB71DC1BDA000C70B75 /* Main.storyboard */,
 				8849CBBA1DC1BDA000C70B75 /* Assets.xcassets */,
 				8849CBBC1DC1BDA000C70B75 /* LaunchScreen.storyboard */,
 				8849CBBF1DC1BDA100C70B75 /* Info.plist */,
-				884C3CEC1DDE8ED3001C417A /* HomeViewController.swift */,
 				88D7F9AC1DD2CA3B0070C37E /* GoogleService-Info.plist */,
+				88687D5A1DE82A21002CA11A /* Helpers */,
 			);
 			path = Wave;
+			sourceTree = "<group>";
+		};
+		88687D5A1DE82A21002CA11A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				88687D581DE82658002CA11A /* Extension.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		88687D5B1DE82A3B002CA11A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8849CBB51DC1BDA000C70B75 /* LoginViewController.swift */,
+				884C3CEC1DDE8ED3001C417A /* HomeViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		88687D5C1DE82A5A002CA11A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88687D5D1DE82A72002CA11A /* EventCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		9E0472D5F5463696AA619E42 /* Pods */ = {
@@ -126,7 +156,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Eude Lesperance";
 				TargetAttributes = {
 					8849CBAF1DC1BDA000C70B75 = {
@@ -228,7 +258,9 @@
 			files = (
 				8849CBB61DC1BDA000C70B75 /* LoginViewController.swift in Sources */,
 				8849CBB41DC1BDA000C70B75 /* AppDelegate.swift in Sources */,
+				88687D5E1DE82A72002CA11A /* EventCell.swift in Sources */,
 				884C3CED1DDE8ED3001C417A /* HomeViewController.swift in Sources */,
+				88687D591DE82658002CA11A /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +304,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -321,6 +354,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

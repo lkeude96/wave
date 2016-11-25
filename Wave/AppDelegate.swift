@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window?.makeKeyAndVisible()
+        
         FIRApp.configure()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -28,7 +30,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = UINavigationController(rootViewController: HomeViewController(collectionViewLayout: UICollectionViewFlowLayout()))
         }
         
-        window?.makeKeyAndVisible()
+        UINavigationBar.appearance().barTintColor = UIColor.rgb(red: 23, green: 42, blue: 58)
+        
+        let statusBarBackgroundView = UIView()
+        statusBarBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        statusBarBackgroundView.backgroundColor = UIColor.rgb(red: 33, green: 45, blue: 67)
+        
+        
+        window?.addSubview(statusBarBackgroundView)
+        
+        statusBarBackgroundView.leadingAnchor.constraint(equalTo: (window?.leadingAnchor)!).isActive = true
+        statusBarBackgroundView.trailingAnchor.constraint(equalTo: (window?.trailingAnchor)!).isActive = true
+        statusBarBackgroundView.topAnchor.constraint(equalTo: (window?.topAnchor)!).isActive = true
+        statusBarBackgroundView.heightAnchor.constraint(equalToConstant: 20).isActive = true
         return true
     }
 
