@@ -8,7 +8,17 @@
 
 import UIKit
 
-class EventCell: UICollectionViewCell {
+class EventCell: BaseCell {
+    var event: Event? {
+        didSet {
+            thumbnailImageView.image = UIImage(named: (event?.thumbnailImageName)!)            
+            eventNameLabel.text = event?.eventName
+            eventDateLabel.text = event?.eventDate
+            eventCostLabel.text = "$\(event!.eventCost!)"
+            
+        }
+    }
+    
     let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -49,16 +59,7 @@ class EventCell: UICollectionViewCell {
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupViews() {
+    override func setupViews() {
         addSubview(thumbnailImageView)
         addSubview(eventNameLabel)
         addSubview(eventDateLabel)

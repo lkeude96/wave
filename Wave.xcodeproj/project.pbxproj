@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8845B7611DEBCFF400F55FA5 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845B7601DEBCFF400F55FA5 /* CreateEventViewController.swift */; };
 		8849CBB41DC1BDA000C70B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849CBB31DC1BDA000C70B75 /* AppDelegate.swift */; };
 		8849CBB61DC1BDA000C70B75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849CBB51DC1BDA000C70B75 /* LoginViewController.swift */; };
 		8849CBB91DC1BDA000C70B75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8849CBB71DC1BDA000C70B75 /* Main.storyboard */; };
@@ -15,12 +16,16 @@
 		884C3CED1DDE8ED3001C417A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C3CEC1DDE8ED3001C417A /* HomeViewController.swift */; };
 		88687D591DE82658002CA11A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88687D581DE82658002CA11A /* Extension.swift */; };
 		88687D5E1DE82A72002CA11A /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88687D5D1DE82A72002CA11A /* EventCell.swift */; };
+		88687D601DE907B2002CA11A /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88687D5F1DE907B2002CA11A /* MenuBar.swift */; };
+		88687D621DE92504002CA11A /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88687D611DE92504002CA11A /* BaseCell.swift */; };
+		88687D651DE952E4002CA11A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88687D641DE952E4002CA11A /* Event.swift */; };
 		88D7F9AD1DD2CA3B0070C37E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88D7F9AC1DD2CA3B0070C37E /* GoogleService-Info.plist */; };
 		D54D042A300092D3194500B3 /* Pods_Wave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B7341A7D42F446BBC0AC21 /* Pods_Wave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08B7341A7D42F446BBC0AC21 /* Pods_Wave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8845B7601DEBCFF400F55FA5 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		8849CBB01DC1BDA000C70B75 /* Wave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8849CBB31DC1BDA000C70B75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8849CBB51DC1BDA000C70B75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +36,9 @@
 		884C3CEC1DDE8ED3001C417A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		88687D581DE82658002CA11A /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		88687D5D1DE82A72002CA11A /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		88687D5F1DE907B2002CA11A /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		88687D611DE92504002CA11A /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		88687D641DE952E4002CA11A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		88D7F9AC1DD2CA3B0070C37E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88D7F9AE1DD2D2800070C37E /* Wave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wave.entitlements; sourceTree = "<group>"; };
 		F371C8CCD72AA5460F618BFD /* Pods-Wave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wave.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wave/Pods-Wave.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +86,7 @@
 		8849CBB21DC1BDA000C70B75 /* Wave */ = {
 			isa = PBXGroup;
 			children = (
+				88687D631DE952D3002CA11A /* Model */,
 				88687D5C1DE82A5A002CA11A /* Views */,
 				88D7F9AE1DD2D2800070C37E /* Wave.entitlements */,
 				8849CBB31DC1BDA000C70B75 /* AppDelegate.swift */,
@@ -105,6 +114,7 @@
 			children = (
 				8849CBB51DC1BDA000C70B75 /* LoginViewController.swift */,
 				884C3CEC1DDE8ED3001C417A /* HomeViewController.swift */,
+				8845B7601DEBCFF400F55FA5 /* CreateEventViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -113,8 +123,18 @@
 			isa = PBXGroup;
 			children = (
 				88687D5D1DE82A72002CA11A /* EventCell.swift */,
+				88687D5F1DE907B2002CA11A /* MenuBar.swift */,
+				88687D611DE92504002CA11A /* BaseCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		88687D631DE952D3002CA11A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88687D641DE952E4002CA11A /* Event.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		9E0472D5F5463696AA619E42 /* Pods */ = {
@@ -256,9 +276,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88687D651DE952E4002CA11A /* Event.swift in Sources */,
 				8849CBB61DC1BDA000C70B75 /* LoginViewController.swift in Sources */,
 				8849CBB41DC1BDA000C70B75 /* AppDelegate.swift in Sources */,
+				88687D601DE907B2002CA11A /* MenuBar.swift in Sources */,
 				88687D5E1DE82A72002CA11A /* EventCell.swift in Sources */,
+				88687D621DE92504002CA11A /* BaseCell.swift in Sources */,
+				8845B7611DEBCFF400F55FA5 /* CreateEventViewController.swift in Sources */,
 				884C3CED1DDE8ED3001C417A /* HomeViewController.swift in Sources */,
 				88687D591DE82658002CA11A /* Extension.swift in Sources */,
 			);
@@ -383,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FBA0FF0C63823B7112B1F3B0 /* Pods-Wave.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Wave/Wave.entitlements;
 				DEVELOPMENT_TEAM = 98ELRV8VW9;
@@ -398,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F371C8CCD72AA5460F618BFD /* Pods-Wave.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Wave/Wave.entitlements;
 				DEVELOPMENT_TEAM = 98ELRV8VW9;

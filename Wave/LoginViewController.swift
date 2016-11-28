@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
             
             print("success: \(user)")
             
-            self.present(HomeViewController(), animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         })
         
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in

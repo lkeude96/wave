@@ -12,4 +12,7 @@ target 'Wave' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
+
+  pod "KCFloatingActionButton", "~> 2.1.0"
+  pod 'Eureka', '~> 2.0.0-beta.1'
 end

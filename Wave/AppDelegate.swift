@@ -9,13 +9,14 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import KCFloatingActionButton
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    let nav = UINavigationController(rootViewController: HomeViewController.shared )
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window?.makeKeyAndVisible()
@@ -24,13 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        if FIRAuth.auth()?.currentUser == nil {
-            window?.rootViewController = LoginViewController()
-        } else {
-            window?.rootViewController = UINavigationController(rootViewController: HomeViewController(collectionViewLayout: UICollectionViewFlowLayout()))
-        }
+        
+        window?.rootViewController = nav
         
         UINavigationBar.appearance().barTintColor = UIColor.rgb(red: 23, green: 42, blue: 58)
+        
+        // Remove navbar shadow
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         
         let statusBarBackgroundView = UIView()
         statusBarBackgroundView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,6 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         statusBarBackgroundView.trailingAnchor.constraint(equalTo: (window?.trailingAnchor)!).isActive = true
         statusBarBackgroundView.topAnchor.constraint(equalTo: (window?.topAnchor)!).isActive = true
         statusBarBackgroundView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        let item = KCFloatingActionButtonItem()
+        item.title = "Create an Event"
+        item.handler = { item in
+            let createVC = CreateEventViewController()
+            self.nav.pushViewController(createVC, animated: true)
+        }
+        
+        KCFABManager.defaultInstance().getButton().addItem(item: item)
+        KCFABManager.defaultInstance().show()
+        
         return true
     }
 
