@@ -46,16 +46,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         statusBarBackgroundView.topAnchor.constraint(equalTo: (window?.topAnchor)!).isActive = true
         statusBarBackgroundView.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-        let item = KCFloatingActionButtonItem()
-        item.title = "Create an Event"
-        item.handler = { item in
-            let createVC = CreateEventViewController()
-            self.nav.pushViewController(createVC, animated: true)
-        }
-        
-        KCFABManager.defaultInstance().getButton().addItem(item: item)
-        KCFABManager.defaultInstance().show()
-        
+//        let item = KCFloatingActionButtonItem()
+//        item.title = "Create an Event"
+//        item.handler = { item in
+//            let createVC = CreateEventViewController()
+//            self.nav.pushViewController(createVC, animated: true)
+//        }
+//        
+//        KCFABManager.defaultInstance().getButton().addItem(item: item)
+//        KCFABManager.defaultInstance().show()
+//        
         return true
     }
 

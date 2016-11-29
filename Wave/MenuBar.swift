@@ -63,7 +63,7 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
 }
 
-class MenuCell: BaseCell {
+class MenuCell: CollectionViewBaseCell {
     let imageView: UIImageView = {
         let imageview = UIImageView()
         imageview.translatesAutoresizingMaskIntoConstraints = false

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class EventCell: BaseCell {
+class EventCell: CollectionViewBaseCell {
     var event: Event? {
         didSet {
             thumbnailImageView.image = UIImage(named: (event?.thumbnailImageName)!)            
             eventNameLabel.text = event?.eventName
             eventDateLabel.text = event?.eventDate
-            eventCostLabel.text = "$\(event!.eventCost!)"
+            eventCostLabel.text = "$\(event!.eventCost)"
             
         }
     }

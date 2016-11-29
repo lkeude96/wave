@@ -8,11 +8,12 @@ target 'Wave' do
   # Pods for Wave
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
 
-  pod "KCFloatingActionButton", "~> 2.1.0"
+  pod 'KCFloatingActionButton', '~> 2.1.0'
   pod 'Eureka', '~> 2.0.0-beta.1'
 end

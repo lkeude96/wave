@@ -1,5 +1,5 @@
 //
-//  BaseCell.swift
+//  CollectionViewBaseCell
 //  Wave
 //
 //  Created by Eude Lesperance on 11/25/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseCell: UICollectionViewCell {
+class CollectionViewBaseCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()

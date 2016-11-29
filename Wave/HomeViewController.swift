@@ -8,31 +8,11 @@
 
 import UIKit
 import Firebase
-import KCFloatingActionButton
 
-class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, KCFloatingActionButtonDelegate {
+class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    var eventsRef: FIRDatabaseReference!
     static let shared: HomeViewController = HomeViewController(collectionViewLayout: UICollectionViewFlowLayout())
-    var events: [Event] = {
-        let brhouseparty = Event()
-        brhouseparty.thumbnailImageName = "event"
-        brhouseparty.eventName = "BR House Party"
-        brhouseparty.eventCost = 16.5
-        brhouseparty.eventDate = "TBD"
-        
-        let freefoodevent = Event()
-        freefoodevent.thumbnailImageName = "food"
-        freefoodevent.eventName = "Free Food Event"
-        freefoodevent.eventCost = 0.0
-        freefoodevent.eventDate = "TBD"
-        
-        let whitepeopleparty = Event()
-        whitepeopleparty.thumbnailImageName = "dinner"
-        whitepeopleparty.eventName = "Fancy Dinner"
-        whitepeopleparty.eventCost = 5000.0
-        whitepeopleparty.eventDate = "TBD"
-        
-        return [brhouseparty, freefoodevent, whitepeopleparty, brhouseparty, freefoodevent, whitepeopleparty]
-    }()
+    var events = [Event]()
     
     let menuBar: MenuBar = {
         let menuBar = MenuBar()
@@ -40,9 +20,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return menuBar
     }()
     
-    let addEventFAB: KCFloatingActionButton = {
-        let fab = KCFloatingActionButton()
-        return fab
+    let noEventLabel: UILabel = {
+        let label = UILabel()
+        label.text = "There are currently no events near. "
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.textColor = .lightGray
+        label.font = .boldSystemFont(ofSize: 30)
+        return label
     }()
     
     var horizontalBarLeftAnchorConstraint: NSLayoutConstraint?
@@ -50,6 +35,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        eventsRef = FIRDatabase.database().reference().child("events")
+        view.backgroundColor = .white
        
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -69,30 +56,40 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         collectionView?.isPagingEnabled = true
         
-        KCFABManager.defaultInstance().getButton().fabDelegate = self
-        
         setupNavBarButtons()
         setupMenuBar()
+        
+        view.addSubview(noEventLabel)
+        noEventLabel.frame = (collectionView?.frame)!
         
         guard (FIRAuth.auth()?.currentUser) != nil else {
             present(LoginViewController(), animated: true, completion: nil)
             return
         }
         
-//        let alertController: UIAlertController = UIAlertController(title: "Hi", message: "Welcome \(displayName)", preferredStyle: .alert)
-//        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        self.present(alertController, animated: true, completion: nil)
-        
-        
+        startObservingDB()
         
     }
     
-    func KCFABOpened(_ fab: KCFloatingActionButton) {
-        print("FAB Opened")
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startObservingDB()
     }
-    
-    func KCFABClosed(_ fab: KCFloatingActionButton) {
-        print("FAB Closed")
+    func startObservingDB() {
+        eventsRef.observe(.value, with: { snapshot in
+            self.collectionView?.isHidden = self.events.count == 0
+            self.noEventLabel.isHidden = !(self.collectionView?.isHidden)!
+            var newEvents = [Event]()
+            
+            for child in snapshot.children {
+                newEvents.append(Event(snapshot: child as! FIRDataSnapshot))
+            }
+            
+            self.events = newEvents
+            self.collectionView?.reloadData()
+        }, withCancel: { error in
+            print(error.localizedDescription)
+        })
     }
     
     private func setupNavBarButtons() {
