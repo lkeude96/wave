@@ -9,7 +9,7 @@
   sudo gem install cocoapods
   ```
 * Download the Wave project
-* Navigate to the directory
+* Navigate to the directory in terminal
 * Install the pods by running
   ``` 
   pod install
