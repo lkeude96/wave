@@ -16,7 +16,7 @@
   ```
 * Once the pods are installed run
   ``` 
-  open Wave.xcodeworkspace
+  open Wave.xcworkspace
   ```
 * Press 
   ``` 
